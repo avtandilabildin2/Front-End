@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PromotionMessage from './PromotionMessage';
+import Button from './Button';
 
 const PersonInfo = () => {
     const [position, setPosition] = useState("Junior Developer");
@@ -10,19 +12,17 @@ const PersonInfo = () => {
     };
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>Employee Details</h1>
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <h2>Employee Details</h2>
             <p><strong>Name:</strong> John Doe</p>
             <p><strong>Position:</strong> {position}</p>
             <p><strong>Company:</strong> TechCorp</p>
             <p><strong>Location:</strong> New York, USA</p>
             <p><strong>Years of Experience:</strong> 2</p>
 
-            {message && <div style={{ color: 'green', margin: '10px 0' }}>{message}</div>}
+            <PromotionMessage message={message} />
 
-            <button onClick={handlePromote}>
-                Повысить в должности
-            </button>
+            <Button onClick={handlePromote} text="Повысить в должности" />
         </div>
     );
 };
